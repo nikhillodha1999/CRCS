@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CRCS Dashboard</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/state-wise.css" />
+    <link rel="stylesheet" href="JS/js.js" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css"
+    />
+    <link rel="stylesheet" href="fontawesome-free-6.2.1-web/css/all.min.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.2.1-web/js/all.min.js" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/regular.min.css"
+      integrity="sha512-k2UAKyvfA7Xd/6FrOv5SG4Qr9h4p2oaeshXF99WO3zIpCsgTJ3YZELDK0gHdlJE5ls+Mbd5HL50b458z3meB/Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <!-- <i class="bx bxl-c-plus-plus icon"></i> -->
+        <img class="bx bxl-c-plus-plus icon img" src="img/logo.png" alt="" />
+        <div class="logo_name">CRCS</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-house"></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+
+        <!-- <h5 class="text1">PAGES</h5> -->
+
+        <li class="">
+          <a href="index.html" class="">
+            <i class="fa-regular fa-clipboard icons"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-chart-line"></i>
+            <span class="links_name">chart</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-people-group"></i>
+            <span class="links_name">Req. Societies</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-highlighter"></i>
+            <span class="links_name">Forms</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <span class="links_name">MSCS Act</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <span class="links_name">Application</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-mountain-city"></i>
+            <span class="links_name">MSCS-MIS</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span class="links_name">Report</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-thumbs-down"></i>
+            <span class="links_name">Liquidation</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-money-check-dollar"></i>
+            <span class="links_name">Bank</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <nav>
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <img class="img1" src="img/MSCS_LOGO.png" alt="" />
+
+        <ul class="main-nav">
+          <li><a class="" href="index.html">Dashboard</a></li>
+          <li><a href="application.html">Application</a></li>
+          <li>
+            <div class="dropdown">
+              <button class="active">Charts</button>
+              <div class="dropdown-content">
+                <a href="state-wise.html" class="active">State Wise</a>
+                <a href="year-wise.html">Year Wise</a>
+                <a href="type-wise.html">Type Wise</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="Attachement -dummydataset.xlsx" download>Req. Societies</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <br /><br />
+    <section>
+      <div class="state-heading">
+        <h3>Registered Societies from 1986 onwards under MSCS, 2002</h3>
+      </div>
+
+      <div>
+        <div class="state-wise">
+          <div class="graph">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOoter -->
+    <footer id="dk-footer" class="dk-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-4">
+            <div class="dk-footer-box-info">
+              <div>
+                <a href="#" class="footer-logo">
+                  <img
+                    src="img/MSCS_LOGO.png"
+                    alt="footer_logo"
+                    class="img-fluid"
+                  />
+                </a>
+              </div>
+              <div class="footer-social-link">
+                <h3>Follow us</h3>
+                <ul>
+                  <li>
+                    <a href="#">
+                      <i class="fa-brands fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa-brands fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa-brands fa-google-plus"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa-brands fa-github" style="color: #ffffff"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- End Social link -->
+            </div>
+            <!-- End Footer info -->
+          </div>
+          <!-- End Col -->
+          <div class="col-md-12 col-lg-8">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="contact-us">
+                  <div class="contact-icon">
+                    <i class="fa fa-map-o" aria-hidden="true"></i>
+                  </div>
+                  <!-- End contact Icon -->
+                  <div class="contact-info">
+                    <h3>NCER, TALEGAON DABHADE</h3>
+                    <p>410507, PUNE</p>
+                  </div>
+                  <!-- End Contact Info -->
+                </div>
+                <!-- End Contact Us -->
+              </div>
+              <!-- End Col -->
+              <div class="col-md-6">
+                <div class="contact-us contact-us-last">
+                  <div class="contact-icon">
+                    <i
+                      class="fa fa-volume-control-phone"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <div class="contact-info">
+                    <a href="tel:7014595713">7014595713</a>
+                  </div>
+                  <!-- End contact Icon -->
+
+                  <!-- End Contact Info -->
+                </div>
+                <!-- End Contact Us -->
+              </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Contact Row -->
+            <div class="row">
+              <div class="col-md-12 col-lg-6">
+                <div class="footer-widget footer-left-widget">
+                  <div class="section-heading">
+                    <h3>Useful Links</h3>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="#">About us</a>
+                    </li>
+                    <li>
+                      <a href="#">Services</a>
+                    </li>
+                    <li>
+                      <a href="#">Projects</a>
+                    </li>
+                    <li>
+                      <a href="#">Contact Us</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- End Footer Widget -->
+              </div>
+              <!-- End col -->
+
+              <!-- End Col -->
+            </div>
+            <!-- End Row -->
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Widget Row -->
+      </div>
+      <!-- End Contact Container -->
+
+      <div class="copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <span>Copyright © 2023, All Right Reserved</span>
+            </div>
+            <!-- End Col -->
+            <div class="col-md-6">
+              <div class="copyright-menu">
+                <ul>
+                  <li>
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="#">Terms</a>
+                  </li>
+                  <li>
+                    <a href="#">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- End col -->
+          </div>
+          <!-- End Row -->
+        </div>
+        <!-- End Copyright Container -->
+      </div>
+      <!-- End Copyright -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let closeBtn = document.querySelector("#btn");
+      // let searchBtn = document.querySelector(".bx-search");
+
+      closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+      });
+
+      // following are the code to change sidebar button(optional)
+      function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+          closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+        } else {
+          closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+        }
+      }
+
+      var graph = document.getElementById("myChart").getContext("2d");
+
+      var myChart = new Chart(graph, {
+        type: "bar",
+        data: {
+          labels: [
+            "ANDHRA PRADESH",
+            "ARUNANCHAL PRADESH",
+            "ASSAM",
+            "BIHAR",
+            "CHANDIGARH",
+            "DADRA AND NAGAR HAVELI",
+            "GOA",
+            "GUJARAT",
+            "HARYANA",
+            "HIMACHAL PRADESH",
+            "JAMMU & KASHMIR",
+            "JHARKHAND",
+            "KARNATAKA",
+            "KERALA",
+            "MADHYA PRADESH",
+            "MAHARASHTRA",
+            "MANIPUR",
+            "NAGALAND",
+            "NEW DELHI",
+            "ODISHA",
+            "PONDICHERRY",
+            "PUNJAB",
+            "RAJASTHAN",
+            "SIKKIM",
+            "TAMIL NADU",
+            "TELANGANA",
+            "UTTAR PRADESH",
+            "UTTARAKHAND",
+            "WEST BENGAL",
+          ],
+
+          datasets: [
+            {
+              label: "No. of Registered Society under MSCS Act 2002",
+              data: [
+                22,
+                1,
+                6,
+                19,
+                1,
+                8,
+                1,
+                1,
+                49,
+                21,
+                1,
+                2,
+                9,
+                30,
+                33,
+                29,
+                654,
+                49,
+                159,
+                19,
+                5,
+                23,
+                74,
+                1,
+                131,
+                13,
+                163,
+                ,
+                5,
+                70,
+              ],
+              backgroundColor: ["rgba(54, 162, 235, 1)"],
+            },
+          ],
+        },
+
+        options: {
+          responsive: true,
+        },
+      });
+    </script>
+  </body>
+</html>

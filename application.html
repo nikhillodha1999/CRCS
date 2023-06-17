@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CRCS Dashboard</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/application.css" />
+    <link rel="stylesheet" href="JS/application.js" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css"
+    />
+    <link rel="stylesheet" href="fontawesome-free-6.2.1-web/css/all.min.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.2.1-web/js/all.min.js" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/regular.min.css"
+      integrity="sha512-k2UAKyvfA7Xd/6FrOv5SG4Qr9h4p2oaeshXF99WO3zIpCsgTJ3YZELDK0gHdlJE5ls+Mbd5HL50b458z3meB/Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <!-- <i class="bx bxl-c-plus-plus icon"></i> -->
+        <img class="bx bxl-c-plus-plus icon img" src="img/logo.png" alt="" />
+        <div class="logo_name">CRCS</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-house"></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+
+        <!-- <h5 class="text1">PAGES</h5> -->
+
+        <li class="">
+          <a href="index.html" class="">
+            <i class="fa-regular fa-clipboard icons"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-chart-line"></i>
+            <span class="links_name">chart</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-people-group"></i>
+            <span class="links_name">Req. Societies</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-highlighter"></i>
+            <span class="links_name">Forms</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <span class="links_name">MSCS Act</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <span class="links_name">Application</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-mountain-city"></i>
+            <span class="links_name">MSCS-MIS</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span class="links_name">Report</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-thumbs-down"></i>
+            <span class="links_name">Liquidation</span>
+          </a>
+        </li>
+        <li class="">
+          <a href="#" class="">
+            <i class="fa-solid fa-money-check-dollar"></i>
+            <span class="links_name">Bank</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <nav>
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <img class="img1" src="img/MSCS_LOGO.png" alt="" />
+
+        <ul class="main-nav">
+          <li><a class="" href="index.html">Dashboard</a></li>
+          <li><a href="Application.html" class="active">Application</a></li>
+          <li>
+            <div class="dropdown">
+              <button class="active">Charts</button>
+              <div class="dropdown-content">
+                <a href="state-wise.html">State Wise</a>
+                <a href="year-wise.html">Year Wise</a>
+                <a href="type-wise.html">Type Wise</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="Attachement -dummydataset.xlsx" download>Req. Societies</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <br /><br />
+
+    <section>
+      <div class="form">
+        <div class="container">
+          <form
+            class="well form-horizontal"
+            action=" "
+            method="post"
+            id="contact_form"
+          >
+            <fieldset>
+              <!-- Form Name -->
+              <legend>Application</legend>
+              <br />
+
+              <div class="form-group">
+                <div>
+                  <label class="col-md-4 control-label">Society Name: </label>
+                </div>
+
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-user"></i
+                    ></span>
+                    <input
+                      name="first_name"
+                      placeholder="First Name"
+                      class="form-control"
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+              <br />
+
+              <div class="form-group">
+                <label class="col-md-4 control-label"
+                  >Date Of Registration:
+                </label>
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-earphone"></i
+                    ></span>
+                    <input
+                      name="phone"
+                      placeholder="DD/MM/YYYY"
+                      class="form-control"
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+              <br />
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Society Address: </label>
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-home"></i
+                    ></span>
+                    <input
+                      name="address"
+                      placeholder="Address"
+                      class="form-control"
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+              <br />
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">State: </label>
+                <div class="col-md-4 selectContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-list"></i
+                    ></span>
+                    <select name="state" class="form-control selectpicker">
+                      <option value=" ">Please select your state</option>
+
+                      <option value="Andhra Pradesh">Andhra Pradesh</option>
+                      <option value="Arunachal Pradesh">
+                        Arunachal Pradesh
+                      </option>
+                      <option value="Assam">Assam</option>
+                      <option value="Bihar">Bihar</option>
+                      <option value="Chhattisgarh">Chhattisgarh</option>
+                      <option value="Goa">Goa</option>
+                      <option value="Gujarat">Gujarat</option>
+                      <option value="Haryana">Haryana</option>
+                      <option value="Himachal Pradesh">Himachal Pradesh</option>
+                      <option value="Jharkhand">Jharkhand</option>
+                      <option value="Karnataka">Karnataka</option>
+                      <option value="Kerala">Kerala</option>
+                      <option value="Madhya Pradesh">Madhya Pradesh</option>
+                      <option value="Maharashtra">Maharashtra</option>
+                      <option value="Manipur">Manipur</option>
+                      <option value="Meghalaya">Meghalaya</option>
+                      <option value="Mizoram">Mizoram</option>
+                      <option value="Nagaland">Nagaland</option>
+                      <option value="Odisha">Odisha</option>
+                      <option value="Punjab">Punjab</option>
+                      <option value="Rajasthan">Rajasthan</option>
+                      <option value="Sikkim">Sikkim</option>
+                      <option value="Tamil Nadu">Tamil Nadu</option>
+                      <option value="Telangana">Telangana</option>
+                      <option value="Tripura">Tripura</option>
+                      <option value="Uttar Pradesh">Uttar Pradesh</option>
+                      <option value="Uttarakhand">Uttarakhand</option>
+                      <option value="West Bengal">West Bengal</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <br />
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">District: </label>
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-home"></i
+                    ></span>
+                    <input
+                      name="city"
+                      placeholder="city"
+                      class="form-control"
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+              <br />
+
+              <div class="form-group">
+                <label class="col-md-4 control-label"
+                  >Area of Operation:
+                </label>
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-home"></i
+                    ></span>
+                    <input
+                      name="city"
+                      placeholder="Multiple areas Possible"
+                      class="form-control"
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+              <br />
+
+              <div class="form-group">
+                <label class="col-md-4 control-label">Sector Type: </label>
+                <div class="col-md-4 selectContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-list"></i
+                    ></span>
+                    <select name="state" class="form-control selectpicker">
+                      <option value=" ">Please select your state</option>
+
+                      <option value="Transport">Transport</option>
+                      <option value="Cooperative Bank">Cooperative Bank</option>
+                      <option value="Marketing">Marketing</option>
+                      <option value="Labour">Labour</option>
+                      <option value="Tourism">Tourism</option>
+                      <option value="Agro">Agro</option>
+                      <option value="Others">Others</option>
+                      <option value="National Federation">
+                        National Federation
+                      </option>
+                      <option value="Federation">Federation</option>
+                      <option value="Construction">Construction</option>
+                      <option value="Welfare">Welfare</option>
+                      <option value="Seed">Seed</option>
+                      <option value="Credit">Credit</option>
+                      <option value="Export">Export</option>
+                      <option value="Consumer">Consumer</option>
+                      <option value="Housing">Housing</option>
+                      <option value="Multi Purpose">Multi Purpose</option>
+                      <option value="Health/Hospital">Health/Hospital</option>
+                      <option value="Fisheries">Fisheries</option>
+                      <option value="Dairy">Dairy</option>
+                      <option value="Organic">Organic</option>
+                      <option value="Industrial/Textile">
+                        Industrial/Textile
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <br />
+
+              <div
+                class="alert alert-success"
+                role="alert"
+                id="success_message"
+              >
+                Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for
+                contacting us, we will get back to you shortly.
+              </div>
+
+              <!-- Button -->
+              <div class="form-group button">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                  <button type="submit" class="btn btn-warning">
+                    Send <span class="glyphicon glyphicon-send"></span>
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <!-- /.container -->
+    </section>
+    <br /><br />
+
+    <script>
+      $(document).ready(function () {
+        $("#contact_form")
+          .bootstrapValidator({
+            // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+            feedbackIcons: {
+              valid: "glyphicon glyphicon-ok",
+              invalid: "glyphicon glyphicon-remove",
+              validating: "glyphicon glyphicon-refresh",
+            },
+            fields: {
+              first_name: {
+                validators: {
+                  stringLength: {
+                    min: 2,
+                  },
+                  notEmpty: {
+                    message: "Please supply your first name",
+                  },
+                },
+              },
+              last_name: {
+                validators: {
+                  stringLength: {
+                    min: 2,
+                  },
+                  notEmpty: {
+                    message: "Please supply your last name",
+                  },
+                },
+              },
+              email: {
+                validators: {
+                  notEmpty: {
+                    message: "Please supply your email address",
+                  },
+                  emailAddress: {
+                    message: "Please supply a valid email address",
+                  },
+                },
+              },
+              phone: {
+                validators: {
+                  notEmpty: {
+                    message: "Please supply your phone number",
+                  },
+                  phone: {
+                    country: "US",
+                    message:
+                      "Please supply a vaild phone number with area code",
+                  },
+                },
+              },
+              address: {
+                validators: {
+                  stringLength: {
+                    min: 8,
+                  },
+                  notEmpty: {
+                    message: "Please supply your street address",
+                  },
+                },
+              },
+              city: {
+                validators: {
+                  stringLength: {
+                    min: 4,
+                  },
+                  notEmpty: {
+                    message: "Please supply your city",
+                  },
+                },
+              },
+              state: {
+                validators: {
+                  notEmpty: {
+                    message: "Please select your state",
+                  },
+                },
+              },
+              zip: {
+                validators: {
+                  notEmpty: {
+                    message: "Please supply your zip code",
+                  },
+                  zipCode: {
+                    country: "US",
+                    message: "Please supply a vaild zip code",
+                  },
+                },
+              },
+              comment: {
+                validators: {
+                  stringLength: {
+                    min: 10,
+                    max: 200,
+                    message:
+                      "Please enter at least 10 characters and no more than 200",
+                  },
+                  notEmpty: {
+                    message: "Please supply a description of your project",
+                  },
+                },
+              },
+            },
+          })
+          .on("success.form.bv", function (e) {
+            $("#success_message").slideDown({ opacity: "show" }, "slow"); // Do something ...
+            $("#contact_form").data("bootstrapValidator").resetForm();
+
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data("bootstrapValidator");
+
+            // Use Ajax to submit form data
+            $.post(
+              $form.attr("action"),
+              $form.serialize(),
+              function (result) {
+                console.log(result);
+              },
+              "json"
+            );
+          });
+      });
+    </script>
+  </body>
+</html>

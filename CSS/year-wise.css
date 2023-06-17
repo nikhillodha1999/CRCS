@@ -1,0 +1,20 @@
+.graph {
+    width: 60em;
+    height: 30em;
+    background-color: white;
+    border-radius: 2%;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+.year-heading {
+    display: flex;
+    flex: content;
+    justify-content: center;
+}
+
+.year-wise {
+    display: flex;
+    flex: content;
+    justify-content: center;
+}

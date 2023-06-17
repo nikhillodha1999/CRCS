@@ -1,0 +1,152 @@
+
+const dataX = [
+    { 2000: 10000 },
+    { 2002: 2500 },
+    { 2004: 35000 },
+    { 2006: 21000 },
+    { 2008: 55000 },
+    { 2010: 80000 },
+    { 2012: 110000 },
+    { 2014: 100000 },
+    { 2016: 90000 },
+    { 2018: 120000 },
+];
+
+// Y Axis
+const minY = 0;
+const maxY = 120000;
+const diffBetweenY = 20000;
+
+// Currency Format
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 0
+})
+
+// ==============================
+
+class App extends React.Component {
+    getLeftColumnValue = () => {
+        const values = [];
+
+        for (let i = 0; i <= maxY; i += diffBetweenY) {
+            values.push(formatter.format(i));
+        }
+
+        return values.reverse();
+    }
+
+    getNumOfDataColumns = () => {
+        const dataColumn = [];
+
+        for (let i = 0; i < dataX.length; i++) {
+            dataColumn.push(dataX[i]);
+        }
+
+        return dataColumn;
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                <div className="heading">React Bar Graph</div>
+                <div className="graph">
+                    <LeftUnitColumn value={this.getLeftColumnValue()} />
+                    {
+                        this.getNumOfDataColumns().map(data => <DataColumn key={data[0]} data={data} />)
+                    }
+                </div>
+            </React.Fragment>
+        );
+    }
+}
+
+class LeftUnitColumn extends React.Component {
+    render() {
+        return (
+            <React.Fragment>
+                {this.props.value.map(value => {
+                    return <div key={value} className="left-unit-cell">{value}</div>
+                })}
+            </React.Fragment>
+        );
+    }
+}
+
+class DataColumn extends React.Component {
+    getNumOfCells = () => {
+        const values = [];
+        const numOfCell = (maxY - minY) / diffBetweenY;
+        const data = this.props.data;
+
+        // (Current Data) * 100% / (Maximum Y) * (Number of cell in 1 column) / 100%;
+        const totalOfColorCell = Object.values(data)[0] * 100 / maxY * numOfCell / 100;
+        const numOfFullCell = Math.floor(totalOfColorCell);
+
+        for (let i = 0; i <= numOfCell; i++) {
+            if (i === 0) {
+                values.push(Object.keys(data)[0]);
+            } else if (i <= numOfFullCell) {
+                values.push(100);
+            } else if (i === Math.ceil(totalOfColorCell)) {
+                values.push((totalOfColorCell - numOfFullCell) * 100);
+            } else {
+                values.push(0);
+            }
+        }
+
+        return values.reverse();
+    }
+
+    getTitle = () => {
+        const { data } = this.props;
+        return `${Object.keys(data)[0]}: ${formatter.format(Object.values(data)[0])}`
+    }
+
+    render() {
+        const numOfCells = this.getNumOfCells();
+        return (
+            <React.Fragment>
+                {
+                    numOfCells.map((value, index) => (
+                        <DataCell
+                            title={this.getTitle()}
+                            value={value}
+                            isLastCell={index === (numOfCells.length - 1)}
+                        />)
+                    )
+                }
+            </React.Fragment>
+        );
+    }
+}
+
+class DataCell extends React.Component {
+    render() {
+        const { title, value, isLastCell } = this.props;
+
+        if (isLastCell) {
+            return (
+                <div className="data-cell last-cell">
+                    <div className="data" title={title}>
+                        {this.props.value}
+                    </div>
+                </div>
+            )
+        }
+
+        return (
+            <div className={`data-cell ${value === 100 ? "full-cell" : ""}`} title={title}>
+                <div
+                    className="data"
+                    style={{ height: value }} />
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById("app")
+);
